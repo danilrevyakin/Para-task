@@ -3,9 +3,12 @@ import java.util.Random;
 
 public class CarFactory {
     private static final Random random = new Random();
+    private static final String[] models = {"Hatchback","Sedan","MPV","SUV","Crossover","Coupe","Convertible"};
+    private static final String[] brands = {"Tesla","BMW","Ford","Seat","Audi","Honda","Jaguar"};
+    private static final String[] colors = {"Blue", "Green", "Magenta", "Red", "Cyan", "Black", "White"};
 
-    public static Car[] createCars(){
-        Car[] cars = new Car[100];
+    public static Car[] createCars(int numberOfCars){
+        Car[] cars = new Car[numberOfCars];
         for (int i = 0; i < cars.length; i++){
             cars[i] = new Car(i+1,getRandBrandName(),getRandModel(),getRandYear(),getRandColor(),getRandPrice(),getRandRegNum());
         }
@@ -13,12 +16,10 @@ public class CarFactory {
     }
 
     private static String getRandBrandName() {
-        String[] brands = {"Tesla","BMW","Ford","Seat","Audi","Honda","Jaguar"};
         return brands[random.nextInt(brands.length)];
     }
 
     private static String getRandModel() {
-        String[] models = {"Hatchback","Sedan","MPV","SUV","Crossover","Coupe","Convertible"};
         return models[random.nextInt(models.length)];
     }
 
@@ -41,7 +42,15 @@ public class CarFactory {
     }
 
     private static String getRandColor(){
-        String[] colors = {"Blue", "Green", "Magenta", "Red", "Cyan", "Black", "White"};
         return colors[random.nextInt(colors.length)];
     }
+
+    static public String[] getModels() {
+        return models.clone();
+    }
+
+    static public String[] getBrands() {
+        return brands.clone();
+    }
+
 }
