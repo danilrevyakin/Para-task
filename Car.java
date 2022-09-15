@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Car {
     private long id;
     private String brand;
@@ -78,13 +76,13 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", releaseYear=" + releaseYear +
-                ", color=" + color +
-                ", price=" + price + '$' +
-                ", registrationNumber='" + registrationNumber + '\'' +
+                "id=" + id + "\t" +
+                ", brand='" + brand + '\'' + "\t" +
+                ", model='" + model + '\'' + "\t" +
+                ", releaseYear=" + releaseYear + "\t" +
+                ", color=" + color + "\t" +
+                ", price=" + price + '$' + "\t" +
+                ", registrationNumber='" + registrationNumber + '\'' + "\t" +
                 '}';
     }
 }

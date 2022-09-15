@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Locale;
 import java.util.Random;
 
@@ -24,7 +25,7 @@ public class CarFactory {
     }
 
     private static int getRandYear(){
-        return random.nextInt(1990,2023);
+        return random.nextInt(1990, LocalDate.now().getYear());
     }
 
     private static String getRandRegNum() {
