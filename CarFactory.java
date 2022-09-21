@@ -7,6 +7,9 @@ public class CarFactory {
     private static final String[] models = {"Hatchback","Sedan","MPV","SUV","Crossover","Coupe","Convertible"};
     private static final String[] brands = {"Tesla","BMW","Ford","Seat","Audi","Honda","Jaguar"};
     private static final String[] colors = {"Blue", "Green", "Magenta", "Red", "Cyan", "Black", "White"};
+    private static final int START_YEAR = 1900;
+    private static final double MIN_PRICE = 3000;
+    private static final double MAX_PRICE = 100000;
 
     public static Car[] createCars(int numberOfCars){
         Car[] cars = new Car[numberOfCars];
@@ -25,7 +28,7 @@ public class CarFactory {
     }
 
     private static int getRandYear(){
-        return random.nextInt(1990, LocalDate.now().getYear());
+        return random.nextInt(START_YEAR, LocalDate.now().getYear());
     }
 
     private static String getRandRegNum() {
@@ -39,7 +42,7 @@ public class CarFactory {
     }
 
     private static double getRandPrice(){
-        return Math.floor(random.nextDouble(3000.00,100000.00) * 100) / 100;
+        return Math.floor(random.nextDouble(MIN_PRICE,MAX_PRICE) * 100) / 100;
     }
 
     private static String getRandColor(){
